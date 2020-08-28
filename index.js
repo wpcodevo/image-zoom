@@ -3,6 +3,9 @@ const pic2 = document.getElementById("pic2");
 const pic3 = document.getElementById("pic3");
 const pic4 = document.getElementById("pic4");
 const picture = document.getElementById("pic");
+const mainContainer = document.getElementById("picture__container");
+const rect = document.getElementById("rect");
+// const zoom = document.getElementById("zoom");
 
 // List of Pictures
 picList = [pic1, pic2, pic3, pic4];
@@ -23,4 +26,66 @@ const changeImage = (imgSrc, n) => {
   picList[n - 1].classList.add("img-active");
   //   update the active side picture
   picActive = n;
+};
+
+// Width and Heigth of the main picture in px
+let w1 = mainContainer.offsetWidth;
+let h1 = mainContainer.offsetHeight;
+
+// zoom ratio
+
+// zoom background-image size
+zoom.style.backgroundSize = w1 * ratio + "px" + h1 * ratio + "px";
+
+// coordinates of the mouse
+let x, y;
+
+// Width and Height  of the selector
+let w2 = rect.offsetWidth;
+let h2 = rect.offsetHeight;
+
+// zoom window width and height
+zoom.style.width = w2 * ratio + "px";
+zoom.style.height = h2 * ratio + "px";
+
+// half of the  width and height
+w2 = w2 / 2;
+h2 = h2 / 2;
+
+// moving the selector box
+const move = e => {
+  // How far is the mouse cursor from an element
+  // x far from left
+  x = e.offsetX;
+  // y far from top
+  y = e.offsetY;
+
+  // Keeping the selector inside the picture
+  // left of picture
+  if (x < w2) {
+    x = w2;
+  }
+
+  // right of picture
+  if (x > w1 - w2) {
+    x = w1 - w2;
+  }
+
+  //   top of picture
+  if (y < h2) {
+    y = h2;
+  }
+
+  //   change the position of the selector
+  rect.style.left = x + "px";
+  rect.style.top = y + "px";
+};
+
+mainContainer.addEventListener("mousemove", event => {
+  move(event);
+  addOpacty();
+});
+
+const addOpacty = () => {
+  rect.classList.add("rect-active");
 };
