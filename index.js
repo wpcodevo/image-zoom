@@ -5,7 +5,7 @@ const pic4 = document.getElementById("pic4");
 const picture = document.getElementById("pic");
 const mainContainer = document.getElementById("picture__container");
 const rect = document.getElementById("rect");
-// const zoom = document.getElementById("zoom");
+const zoom = document.getElementById("zoom");
 
 // List of Pictures
 picList = [pic1, pic2, pic3, pic4];
@@ -33,12 +33,13 @@ let w1 = mainContainer.offsetWidth;
 let h1 = mainContainer.offsetHeight;
 
 // zoom ratio
+let ratio = 3;
 
 // zoom background-image size
 zoom.style.backgroundSize = w1 * ratio + "px" + h1 * ratio + "px";
 
 // coordinates of the mouse
-let x, y;
+let x, y, xx, yy;
 
 // Width and Height  of the selector
 let w2 = rect.offsetWidth;
@@ -60,6 +61,9 @@ const move = e => {
   // y far from top
   y = e.offsetY;
 
+  xx = x * ratio;
+  yy = x * ratio;
+
   // Keeping the selector inside the picture
   // left of picture
   if (x < w2) {
@@ -79,6 +83,10 @@ const move = e => {
   //   change the position of the selector
   rect.style.left = x + "px";
   rect.style.top = y + "px";
+
+  //   changing background image of zoom window
+  zoom.style.backgroundPosition = "-" + xx * ratio + "px" + "-" + yy + "px";
+  console.log(xx + yy);
 };
 
 mainContainer.addEventListener("mousemove", event => {
