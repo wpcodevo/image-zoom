@@ -11,6 +11,7 @@ html {
 
 body {
     font-size: 1.6rem;
+    padding: 5rem 0;
 }
 
 .container {
@@ -21,4 +22,33 @@ body {
 
 .container div {
     margin: 1rem;
+}
+
+.pictures {
+    width: 6.4rem;
+}
+
+.pictures img {
+    margin-bottom: .8rem;
+}
+
+img {
+    width: 100%;
+}
+
+.picture {
+    position: relative;
+    width: 42rem;
+    height: 40rem;
+}
+
+.picture img {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    margin: 1rem;
+}
+
+.img-active {
+    border: 1px solid #222;
 }
