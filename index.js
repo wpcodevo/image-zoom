@@ -36,8 +36,7 @@ let h1 = mainContainer.offsetHeight;
 let ratio = 3;
 
 // zoom background-image size
-zoom.style.backgroundSize = w1 * ratio + "px" + h1 * ratio + "px";
-
+zoom.style.backgroundSize = `${w1 * ratio}px  ${h1 * ratio}px`;
 // coordinates of the mouse
 let x, y, xx, yy;
 
@@ -46,8 +45,8 @@ let w2 = rect.offsetWidth;
 let h2 = rect.offsetHeight;
 
 // zoom window width and height
-zoom.style.width = w2 * ratio + "px";
-zoom.style.height = h2 * ratio + "px";
+zoom.style.width = `400px`;
+zoom.style.height = `400px`;
 
 // half of the  width and height
 w2 = w2 / 2;
@@ -80,13 +79,17 @@ const move = e => {
     y = h2;
   }
 
+  // bottom of picture
+  if (y > h1 - h2) {
+    y = h1 - h2;
+  }
+
   //   change the position of the selector
   rect.style.left = x + "px";
   rect.style.top = y + "px";
 
   //   changing background image of zoom window
-  zoom.style.backgroundPosition = "-" + xx * ratio + "px" + "-" + yy + "px";
-  console.log(xx + yy);
+  zoom.style.backgroundPosition = `-${xx * ratio}px -${yy * ratio}px`;
 };
 
 mainContainer.addEventListener("mousemove", event => {

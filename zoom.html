@@ -2,35 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Zoom</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Zoom</title>
 
-    <!-- StyleSheet -->
-    <link rel="stylesheet" href="style.css">
+  <!-- StyleSheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="pictures">
-            <img onmouseover="changeImage('./iPhone/iphone1.jpeg', 1)" src="./iPhone/iphone1.jpeg" id="pic1">
-            <img onmouseover="changeImage('./iPhone/iphone2.jpeg', 2)" src="./iPhone/iphone2.jpeg" id="pic2">
-            <img onmouseover="changeImage('./iPhone/iphone3.jpeg', 3)" src="./iPhone/iphone3.jpeg" id="pic3">
-            <img onmouseover="changeImage('./iPhone/iphone4.jpeg', 4)" src="./iPhone/iphone4.jpeg" id="pic4">
-        </div>
-
-        <div class="picture" id="picture">
-            <div class="rect" id="rect"></div>
-            <div class="picture__container" id="picture__container">
-                <img src="./iPhone/iphone1.jpeg" id="pic">
-            </div>
-        </div>
-
-        <div class="zoom" id="zoom"></div>
+  <div class="container">
+    <div class="pictures">
+      <img onmouseover="changeImage('./iPhone/iphone1.jpeg', 1)" src="./iPhone/iphone1.jpeg" id="pic1" />
+      <img onmouseover="changeImage('./iPhone/iphone1.jpeg', 1)" src="./iPhone/iphone1.jpeg" id="pic1" />
+      <img onmouseover="changeImage('./iPhone/iphone2.jpeg', 2)" src="./iPhone/iphone2.jpeg" id="pic2" />
+      <img onmouseover="changeImage('./iPhone/iphone3.jpeg', 3)" src="./iPhone/iphone3.jpeg" id="pic3" />
+      <img onmouseover="changeImage('./iPhone/iphone4.jpeg', 4)" src="./iPhone/iphone4.jpeg" id="pic4" />
     </div>
 
-    <script src="index.js"></script>
+    <div class="picture" id="picture">
+      <div class="rect" id="rect"></div>
+      <div class="picture__container" id="picture__container">
+        <img src="./iPhone/iphone1.jpeg" id="pic" />
+      </div>
+    </div>
+
+    <div class="zoom" id="zoom"></div>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
